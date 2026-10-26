@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ELI10 — Explain Like I'm 10</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='15' fill='%230F766E'/><text x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'>10</text></svg>" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="badge">10</span> ELI10</div>
+    <p class="tag">Explain Like I'm 10</p>
+  </header>
+
+  <main>
+    <section id="input-section" class="hero">
+      <h1>Paste something confusing.<br /><span>Get it explained like you're 10.</span></h1>
+      <p class="lede">Hospital leaflets, contracts, school forms, official letters. You get what it means, what to do, what to watch out for, and what to ask — and every point shows the exact words it came from.</p>
+
+      <div class="samples" role="group" aria-label="Try a sample">
+        <span>Try a sample:</span>
+        <button type="button" class="chip" data-sample="hospital">Hospital leaflet</button>
+        <button type="button" class="chip" data-sample="tenancy">Tenancy clause</button>
+        <button type="button" class="chip" data-sample="school">School trip form</button>
+      </div>
+
+      <label for="doc" class="sr-only">Your document</label>
+      <textarea id="doc" rows="10" placeholder="Paste the confusing text here…"></textarea>
+      <div class="row">
+        <span id="count" class="count">0 / 6,000</span>
+        <button id="explain" class="primary" type="button" disabled>Explain it</button>
+      </div>
+      <p id="error" class="error" role="alert" hidden></p>
+    </section>
+
+    <section id="result" class="result" hidden aria-live="polite">
+      <div class="result-head">
+        <h2 id="r-title"></h2>
+        <button id="restart" type="button" class="link">Start over</button>
+      </div>
+      <div class="cols">
+        <div class="card">
+          <div class="sec sec-short">
+            <h3>In short</h3>
+            <p id="r-summary"></p>
+          </div>
+          <div class="sec sec-do">
+            <h3>What you need to do</h3>
+            <ul id="r-actions" class="points"></ul>
+          </div>
+          <div class="sec sec-watch">
+            <h3>Watch out for</h3>
+            <ul id="r-watch" class="points"></ul>
+          </div>
+          <div class="sec sec-ask">
+            <div class="sec-head">
+              <h3>Questions to ask</h3>
+              <button id="copy" type="button" class="secondary">Copy questions</button>
+            </div>
+            <ol id="r-questions" class="points"></ol>
+          </div>
+          <p class="hint">Tip: click any point to see where it came from →</p>
+        </div>
+        <aside class="original">
+          <h3>The original</h3>
+          <div id="r-original" class="original-text"></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>ELI10 explains what a document says. It doesn't give legal or medical advice. Nothing you paste is saved.</footer>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

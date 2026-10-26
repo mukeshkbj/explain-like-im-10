@@ -1,0 +1,12 @@
+{
+  "name": "explain-like-im-10",
+  "version": "0.1.0",
+  "description": "Paste a confusing document, get it explained like you're 10 — with every point traced back to the original words.",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server.js",
+    "check": "node scripts/check.js"
+  },
+  "license": "MIT"
+}
